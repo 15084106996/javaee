@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
 
-@WebServlet(name = "LoginServlet02",value = "/login2")
+//@WebServlet(name = "LoginServlet02",value = "/login2")
 public class LoginServlet02 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 获取请求参数

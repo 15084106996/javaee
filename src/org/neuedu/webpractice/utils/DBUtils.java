@@ -1,4 +1,4 @@
-package org.neuedu.servlet3020.utils;
+package org.neuedu.webpractice.utils;
 
 import java.io.IOException;
 import java.sql.*;

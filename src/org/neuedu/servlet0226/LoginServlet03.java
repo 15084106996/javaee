@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "LoginServlet03",value = "/login3")
+//@WebServlet(name = "LoginServlet03",value = "/login3")
 public class LoginServlet03 extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // 获取请求参数 username tom password 123
