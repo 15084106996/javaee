@@ -1,4 +1,4 @@
-package org.neuedu.webpractice.controller;
+package org.neuedu.webpractice.controller.sysuser;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.neuedu.servlet0303.model.RespBean;

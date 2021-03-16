@@ -1,10 +1,21 @@
 package org.neuedu.webpractice.bean;
 
+import java.util.List;
+
 public class SysUser {
     private Long id;
     private String username;
     private String password;
     private String nickname;
+    private List<Role> roles;
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
 
     public Long getId() {
         return id;

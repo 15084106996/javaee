@@ -1,9 +1,9 @@
 package org.neuedu.webpractice.filter;
 
-        import javax.servlet.*;
-        import javax.servlet.annotation.WebFilter;
-        import javax.servlet.http.HttpServletResponse;
-        import java.io.IOException;
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @WebFilter(filterName = "FilterA_CrossOrigin",value="/*")
 public class FilterA_CrossOrigin implements Filter {

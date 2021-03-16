@@ -1,11 +1,14 @@
 package org.neuedu.webpractice.dao;
 
+import org.neuedu.webpractice.bean.Role;
 import org.neuedu.webpractice.bean.SysUser;
 import org.neuedu.webpractice.utils.DBUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SysUserDaoImpl implements SysUserDao {
     @Override
@@ -35,5 +38,36 @@ public class SysUserDaoImpl implements SysUserDao {
             DBUtils.getInstance().close(conn);
         }
         return user;
+    }
+
+    @Override
+    public List<Role> getRolesById(Long id) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        PreparedStatement ps1 = null;
+        ResultSet rs = null;
+        List<Role> roles = new ArrayList<>();
+        try {
+            conn = DBUtils.getInstance().getConnection();
+            ps = conn.prepareStatement("select *\n" +
+                    "from role\n" +
+                    "where id in (select rid from user_role where uid = ?)");
+            ps.setLong(1, id);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Role role = new Role();
+                role.setId(rs.getInt("id"));
+                role.setRname(rs.getString("rname"));
+                role.setRnameZh(rs.getString("rnameZh"));
+                roles.add(role);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBUtils.getInstance().close(rs);
+            DBUtils.getInstance().close(ps);
+            DBUtils.getInstance().close(conn);
+        }
+        return roles;
     }
 }

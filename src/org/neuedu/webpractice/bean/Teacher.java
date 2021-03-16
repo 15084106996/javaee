@@ -8,17 +8,26 @@ public class Teacher {
     private Long id;
     private String tname;
     private String nation;
-    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd",timezone = "Asia/Shanghai")
     private Date birthday;
     private String mobile;
     private String educate;
     private String school;
     private Boolean gender;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "Asia/Shanghai")
     private Date joinTime;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "Asia/Shanghai")
     private Date leaveTime;
     private Boolean status;
+    private Boolean delMark;
+
+    public Boolean getDelMark() {
+        return delMark;
+    }
+
+    public void setDelMark(Boolean delMark) {
+        this.delMark = delMark;
+    }
 
     public Long getId() {
         return id;

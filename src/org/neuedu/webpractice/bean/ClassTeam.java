@@ -12,6 +12,24 @@ public class ClassTeam {
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date closeTime;
     private Integer type;
+    private Teacher teacher;
+    private Boolean yesOrNot;
+
+    public Boolean getYesOrNot() {
+        return yesOrNot;
+    }
+
+    public void setYesOrNot(Boolean yesOrNot) {
+        this.yesOrNot = yesOrNot;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 
     public Long getId() {
         return id;
